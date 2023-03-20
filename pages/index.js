@@ -7,7 +7,7 @@ export default function Home() {
   const [inputVal, setInputVal] = useState("")
   const [currentCity,setCurrentCity] = useState({city:"",weather:"",temp:"",pressure:"",humidity:"",wind:"", date:"", temp_f:"", wind_mile:""})
   const [weatherArrForecast, setWeatherArr] = useState([])
-  let farenheit = false
+  let fahrenheit = false
   const [imperial, setImperial] = useState(false)
   // console.log("weatherArrForecast origianl: ",weatherArrForecast)
   const handleCheckboxChange = (e)=>{
@@ -95,7 +95,7 @@ export default function Home() {
 
             <h1 className='text-xl'>Your city:<span className='font-bold m-2'>{currentCity.city}</span></h1>
             <h3 className='text-sm my-2 '>Weather:<span className='font-bold m-2'>{currentCity.weather}  </span></h3>
-            <h3 className='text-sm my-2'>Temperature:  {!imperial ? <span className='font-bold m-2'>{currentCity.temp} celcius</span>:<span className='font-bold m-2'>{currentCity.temp_f} farenheit</span>}</h3>
+            <h3 className='text-sm my-2'>Temperature:  {!imperial ? <span className='font-bold m-2'>{currentCity.temp} celcius</span>:<span className='font-bold m-2'>{currentCity.temp_f} fahrenheit</span>}</h3>
             <h3 className='text-sm my-2'>Pressure:<span className='font-bold m-2'>{currentCity.pressure}</span></h3>
             <h3 className='text-sm my-2'>Humidity:<span className='font-bold m-2'>{currentCity.humidity}</span> </h3>
             <h3 className='text-sm my-2'>Wind:{!imperial ? <span className='font-bold m-2'>{currentCity.wind} kph</span>:<span className='font-bold m-2'>{currentCity.wind_mile} mph</span>}</h3>
@@ -109,8 +109,8 @@ export default function Home() {
             <div key={i} className='bg-orange-100  rounded-md shadow-md p-6'>
               <h4> Day: <span className='font-bold m-2'>{x.date}</span></h4>
               <h4> Weather: <span className='m-2 font-bold ' >{x.day.condition.text}</span></h4>
-              <h4> Min: {(imperial) ? <span className='font-bold m-2'>{x.day.mintemp_f} farenheit</span> :<span className='font-bold m-2'>{x.day.mintemp_c} celcius</span>}</h4>
-              <h4> Max: {(imperial) ? <span className='font-bold m-2'>{x.day.maxtemp_f} farenheit</span> :<span className='font-bold m-2'>{x.day.maxtemp_c} celcius</span>}</h4>
+              <h4> Min: {(imperial) ? <span className='font-bold m-2'>{x.day.mintemp_f} fahrenheit</span> :<span className='font-bold m-2'>{x.day.mintemp_c} celcius</span>}</h4>
+              <h4> Max: {(imperial) ? <span className='font-bold m-2'>{x.day.maxtemp_f} fahrenheit</span> :<span className='font-bold m-2'>{x.day.maxtemp_c} celcius</span>}</h4>
             </div>)}
           })}
             {/* <div className='bg-yellow-100'>01</div>
